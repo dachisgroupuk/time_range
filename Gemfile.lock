@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     time_range (0.1)
-      activesupport (~> 3.0.9)
+      activesupport
       i18n
 
 GEM
