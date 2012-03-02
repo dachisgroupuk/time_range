@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/time_range', __FILE__)
+require File.expand_path('../lib/time_range/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.add_development_dependency('rake', '>= 0.8')
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.rubyforge_project = s.name
   s.summary = %q{Class to deal with Time ranges}
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.version = TimeRange::VERSION.dup
+  s.version = "0.1"
 end

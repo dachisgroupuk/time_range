@@ -251,7 +251,7 @@ describe TimeRange do
     end
     subject { TimeRange.new(@start, @finish).to_iso8601 }
     
-    it { subject.should be_kind_of(Iso8601TimeRange) }
+    it { subject.should be_kind_of(TimeRange::Iso8601) }
     
     context "with timezone" do
       it "should not change the instance it is called on" do

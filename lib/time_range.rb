@@ -1,7 +1,7 @@
 require 'time'
 require 'active_support'
 require 'active_support/all'
-require_relative 'iso8601_time_range'
+require_relative 'time_range/iso8601'
 
 class TimeRange
   VERSION = '0.1'
@@ -64,7 +64,7 @@ class TimeRange
   end
   
   def to_iso8601
-    ::Iso8601TimeRange.new(self)
+    Iso8601.new(self)
   end
   
   def length

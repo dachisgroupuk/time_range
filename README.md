@@ -52,4 +52,4 @@ Some examples:
 ### ISO 8601
 Time ranges can be converted to a format compatible with the ISO 8601 specification.
 
-The method `to_iso8601` returns an instance of `Iso8601TimeRange`. This class has got `start` and `finish` attributes (which are strings, as opposed to the same attributes being `Time` instances in the `TimeRange` class), but no methods.
+The method `to_iso8601` returns an instance of `TimeRange::Iso8601`. This class has got `start` and `finish` attributes (which are strings, as opposed to the same attributes being `Time` instances in the `TimeRange` class), but no methods.
