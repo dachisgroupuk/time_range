@@ -251,20 +251,9 @@ describe TimeRange do
     end
     subject { TimeRange.new(@start, @finish).to_iso8601 }
     
-    it { subject.should be_kind_of(TimeRange) }
-    it { subject.start.should == @start.iso8601 }
-    it { subject.finish.should == @finish.iso8601 }
+    it { subject.should be_kind_of(Iso8601TimeRange) }
     
     context "with timezone" do
-      before do
-        @start = Time.parse("2011-11-11 11:11:11 +1000")
-        @finish = Time.parse("2011-11-11 11:11:11 +0500")
-      end
-      subject { TimeRange.new(@start, @finish).to_iso8601 }
-      
-      it { subject.start.should == @start.iso8601 }
-      it { subject.finish.should == @finish.iso8601 }
-      
       it "should not change the instance it is called on" do
         range = TimeRange.new(@start, @finish)
         range.freeze

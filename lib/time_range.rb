@@ -1,6 +1,8 @@
 require 'time'
 require 'active_support'
 require 'active_support/all'
+require_relative 'iso8601_time_range'
+
 class TimeRange
   VERSION = '0.1'
   USAGE = <<-END
@@ -46,7 +48,7 @@ class TimeRange
   def eql?(other)
     return false unless other.instance_of?(self.class)
     return true if self.equal?(other)
-    start == other.start && finish == other.finish    
+    start == other.start && finish == other.finish
   end
   
   def -(interval)
@@ -62,7 +64,7 @@ class TimeRange
   end
   
   def to_iso8601
-    ::TimeRange.new(@start.utc.iso8601, @finish.utc.iso8601)
+    ::Iso8601TimeRange.new(self)
   end
   
   def length
@@ -82,10 +84,8 @@ class TimeRange
   end
   
   def to_s
-    iso8601_range = to_iso8601
-    "#{iso8601_range.start}~#{iso8601_range.finish}"
+    to_iso8601.to_s
   end
-
 
   def self.default
     range_finish = Time.now.utc
