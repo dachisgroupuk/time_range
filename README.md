@@ -3,7 +3,7 @@ TimeRange
 A gem to take the pain out of dealing with time ranges.
 
 ### Usage
-This is how you could create a new time range starting 2 days and ending at the present time:
+This is how you could create a new time range starting 2 days ago and ending at the present time:
 
     TimeRange.new(2.days.ago)
 
