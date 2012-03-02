@@ -1,3 +1,6 @@
+require 'time'
+require 'active_support'
+require 'active_support/all'
 class TimeRange
   VERSION = '0.1'
   USAGE = <<-END
