@@ -20,6 +20,7 @@ class TimeRange
   
   def initialize(start, finish=Time.now)
     raise ArgumentError.new(USAGE) if start > finish
+    return nil unless start && finish
     @start = start
     @finish = finish
   end
